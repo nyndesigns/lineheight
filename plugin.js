@@ -15,18 +15,18 @@
 				names.splice( i--, 1 );
 		}
 		editor.ui.addRichCombo( comboName, {
-			label: 'Line Height',
-			title: 'Line Height',
+			label: editor.lang.lineheight.title,
+			title: editor.lang.lineheight.title,
 			toolbar: 'styles,' + order,
 			allowedContent: style,
 			requiredContent: style,
 			panel: {
 				css: [ CKEDITOR.skin.getPath( 'editor' ) ].concat( config.contentsCss ),
 				multiSelect: false,
-				attributes: { 'aria-label': 'Line-Height' }
+				attributes: { 'aria-label': editor.lang.lineheight.title }
 			},
 			init: function() {
-				this.startGroup('Line-Height');
+				this.startGroup(editor.lang.lineheight.title);
 				for ( var i = 0; i < names.length; i++ ) {
 					var name = names[ i ];					
 					this.add( name, styles[ name ].buildPreview(), name );
@@ -64,10 +64,10 @@
 	}
 	CKEDITOR.plugins.add( 'lineheight', {
 		requires: 'richcombo',
-		lang: 'af,ar,bg,bn,bs,ca,cs,cy,da,de,el,en,en-au,en-ca,en-gb,eo,es,et,eu,fa,fi,fo,fr,fr-ca,gl,gu,he,hi,hr,hu,id,is,it,ja,ka,km,ko,ku,lt,lv,mk,mn,ms,nb,nl,no,pl,pt,pt-br,ro,ru,si,sk,sl,sq,sr,sr-latn,sv,th,tr,tt,ug,uk,vi,zh,zh-cn', // %REMOVE_LINE_CORE%
+		lang: 'en,fr,es',
 		init: function( editor ) {
 			var config = editor.config;
-			addCombo( editor, 'lineheight', 'size', 'Line Height', config.line_height, 'Line Height', config.lineHeight_style, 40 );
+			addCombo( editor, 'lineheight', 'size', editor.lang.lineheight.title, config.line_height, editor.lang.lineheight.title, config.lineHeight_style, 40 );
 		}
 	} );
 } )();
